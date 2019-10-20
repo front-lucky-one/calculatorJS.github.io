@@ -1,0 +1,168 @@
+@import 'variables'
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+    font-family: 'Francois One', sans-serif
+    outline: none
+a
+    color: inherit
+    text-decoration: none
+    &:visited
+        text-decoration: none
+        color: inherit
+
+    &:hover
+        text-decoration: none
+        color: inherit
+
+    &:focus
+        text-decoration: none
+        color: inherit
+
+    &:active
+        text-decoration: none
+        color: inherit
+.app
+    background: linear-gradient(to bottom, #b4e391 0%,#61c419 50%,#b4e391 100%)
+    min-height: 800px
+.logo
+    display: flex
+    flex-direction: column
+    align-items: center
+    width: 100%
+
+    background: linear-gradient(to bottom, #3f4c6b 0%,#3f4c6b 100%)
+    box-shadow: 0px 1.5px 10px 0 rgba(1, 0, 42, 0.05)
+    color: #ffffff
+
+    text-align: center
+    margin-bottom: 30px
+    .logo-text,.by
+        font-weight: 100
+
+.title
+    width: 100%
+    margin-bottom: 30px
+    font-weight: 500
+    font-size: 20px
+    color: $text-color
+    text-align: center
+.main
+    display: flex
+    justify-content: space-between
+    max-width: 1252px
+    margin: 0 auto
+    padding: 0 10px
+    padding-bottom: 30px
+    @media screen and (max-width: 768px)
+        flex-direction: column
+
+.data
+    @media screen and (max-width: 768px)
+        margin-bottom: 40px
+
+    .choose-expenses, .optionalexpenses, .count-budget, .choose-income-label
+        @include header
+        font-size: 17px
+    .expenses-item, .optionalexpenses-item, .choose-income, .choose-sum, .choose-percent
+        @include input
+
+        &::placeholder
+            color: black
+    .expenses-item-btn, .optionalexpenses-btn, .count-budget-btn
+        @include btn
+        margin-bottom: 10px
+    .expenses-item-btn
+
+    .optionalexpenses-item
+        width: calc((100%/3) - 4px)
+    .count-budget-btn
+        width: 120px
+    .choose-income
+        display: block
+        width: 80%
+        margin: 0 auto
+    .checksavings
+        margin: 20px auto
+
+        text-align: center
+        input
+            width: 30px
+    .choose-sum, .choose-percent
+        width: 30%
+
+    .sum-wrapp
+        display: flex
+        align-items: center
+        justify-content: space-around
+        input
+            margin-bottom: 0
+
+.start
+    @include btn
+    width: 200px
+    height: 45px
+    font-size: 18px
+    font-weight: 100
+    margin-bottom: 40px
+.result
+    width: 50%
+    margin-left: 40px
+    @media screen and (max-width: 768px)
+
+        width: 100%
+        margin-left: 0px
+
+    &-table
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        padding: 25px 25px 15px 25px
+        background-color: #fff
+        box-shadow: 0px 1.5px 20px 0 rgba(1, 0, 42, 0.1)
+        .budget, .budget-value, .daybudget, .daybudget-value, .level, .level-value, .expenses, .expenses-value, .optionalexpenses, .optionalexpenses-value, .income, .income-value, .monthsavings, .monthsavings-value, .yearsavings, .yearsavings-value
+
+            width: 48%
+            margin-bottom: 10px
+            min-height: 40px
+            padding: 10px
+            font-weight: 500
+            background: linear-gradient(to bottom, #b4e391 0%,#61c419 50%,#b4e391 100%)
+            @media screen and (max-width: 480px)
+                font-size: 13px
+
+        .budget-value, .daybudget-value, .level-value, .expenses-value, .optionalexpenses-value, .income-value, .monthsavings-value, .yearsavings-value
+
+            word-break: break-word
+    .time-data
+        width: 100%
+        margin: 0 auto
+        display: flex
+        justify-content: space-between
+        margin-top: 40px
+        @media screen and (max-width: 480px)
+
+            flex-direction: column
+            align-items: center
+
+        .year, .month, .day
+            display: flex
+            align-items: center
+            font-size: 16px
+            font-weight: 500
+            @media screen and (max-width: 480px)
+                width: 100%
+                display: flex
+                justify-content: space-between
+                margin-bottom: 10px
+                padding: 0 18px
+        .year-value, .month-value, .day-value
+            @include input
+            width: 80px
+            height: 30px
+            margin-left: 10px
+            margin-bottom: 0
+            @media screen and (max-width: 480px)
+
+                width: auto
