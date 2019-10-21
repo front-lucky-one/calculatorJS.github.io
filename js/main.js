@@ -23,6 +23,12 @@ let startNum = document.querySelector('.start'),
     day = document.querySelectorAll('.persons')[1],
     place = document.getElementById('lol'),
     numValue = document.querySelector('.value'),
+    dateInput = document.querySelector('.date-input'),
+    budjetInput = document.querySelector('.budjet-input'),
+    modalContent = document.querySelector('.modalwindow'),
+    modalBudjet = document.querySelector('.modalBudjet'),
+    dateNextBtn = document.querySelector('.date-next-btn'),
+    startBtn = document.querySelector('.start-programm-btn'),
     personsSum = 0,
     daySum = 0,
     total = 0;
@@ -36,6 +42,41 @@ let appData = {
     income: [],
     savings: false,
 };
+
+startNum.addEventListener('click', function () {
+    modalContent.style.display = 'block';
+});
+
+dateInput.addEventListener('input', function () {
+    time = dateInput.value;
+});
+
+dateNextBtn.addEventListener('click', function () {
+    modalContent.style.display = 'none';
+    modalBudjet.style.display = 'block';
+});
+
+modalBudjet.addEventListener('input', function () {
+    money = budjetInput.value;
+});
+
+startBtn.addEventListener('click', function () {
+    if (budjetInput.value != '') {
+        startBtn.disabled = false;
+        modalBudjet.style.display = 'none';
+        appData.moneyFin = money;
+        appData.timeData = time;
+        budjetNum.textContent = money;
+        yearNum.value = new Date(Date.parse(time)).getFullYear();
+        monthNum.value = new Date(Date.parse(time)).getMonth() + 1;
+        daysNum.value = new Date(Date.parse(time)).getDate();
+
+    } else {
+        startBtn.disabled = true;
+
+    }
+
+});
 
 countBtn.addEventListener('click', function () {
     if (appData.moneyFin != undefined) {
@@ -56,25 +97,6 @@ countBtn.addEventListener('click', function () {
     } else {
         dayNum.textContent = 'Произошла ошибка'
     }
-
-});
-
-
-startNum.addEventListener('click', function () {
-    time = prompt('Ведите дату в формате yyyy-нн-мм', '');
-    money = +prompt('Ваш бюджет на месяц?', '');
-
-
-    while (isNaN(money) || money == "" || money == null) {
-        money = prompt("Ваш бюджет?", "");
-    };
-    appData.moneyFin = money;
-    appData.timeData = time;
-    budjetNum.textContent = money.toFixed();
-    yearNum.value = new Date(Date.parse(time)).getFullYear();
-    monthNum.value = new Date(Date.parse(time)).getMonth() + 1;
-    daysNum.value = new Date(Date.parse(time)).getDate();
-
 
 });
 
@@ -112,12 +134,14 @@ optionalBtn.addEventListener('click', function () {
     }
 
 });
+
 chooseIncome.addEventListener('input', () => {
     let items = chooseIncome.value;
     appData.income = items.split(',');
     incomeNum.textContent = appData.income;
 
 });
+
 savingsCheck.addEventListener('click', function () {
     if (appData.sevings == true) {
         appData.sevings = false;
@@ -125,6 +149,7 @@ savingsCheck.addEventListener('click', function () {
         appData.sevings = true;
     }
 });
+
 sumValue.addEventListener('input', function () {
     if (appData.sevings == true) {
         let sum = +sumValue.value,
@@ -136,6 +161,7 @@ sumValue.addEventListener('input', function () {
 
     }
 });
+
 persentValue.addEventListener('input', function () {
     if (appData.sevings == true) {
         let sum = +sumValue.value,

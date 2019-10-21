@@ -277,3 +277,117 @@ a {
       @media screen and (max-width: 480px) {
         .result .time-data .year-value, .result .time-data .month-value, .result .time-data .day-value {
           width: auto; } }
+
+.modalwindow {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999999999;
+  display: none; }
+  .modalwindow .modal-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    max-width: 400px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    padding: 10px;
+    text-align: center;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 10px 35px rgba(33, 37, 52, 0.4);
+    box-shadow: 0 10px 35px rgba(33, 37, 52, 0.4);
+    background-color: #353b56;
+    color: black; }
+    @media screen and (max-width: 480px) {
+      .modalwindow .modal-content {
+        max-width: 300px; } }
+  .modalwindow .modal-title {
+    color: white;
+    margin-bottom: 10px; }
+    @media screen and (max-width: 480px) {
+      .modalwindow .modal-title {
+        font-size: 20px; } }
+  .modalwindow .date-input {
+    margin-bottom: 10px;
+    border: none;
+    padding: 5px;
+    text-transform: uppercase;
+    border-radius: 5px; }
+  .modalwindow .date-next-btn {
+    padding: 10px;
+    color: white;
+    border: 1px solid black;
+    background: -webkit-gradient(linear, left top, left bottom, from(#b4e391), color-stop(50%, #61c419), to(#b4e391));
+    background: -webkit-linear-gradient(top, #b4e391 0%, #61c419 50%, #b4e391 100%);
+    background: -o-linear-gradient(top, #b4e391 0%, #61c419 50%, #b4e391 100%);
+    background: linear-gradient(to bottom, #b4e391 0%, #61c419 50%, #b4e391 100%);
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase; }
+
+.modalBudjet {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999999999;
+  display: none; }
+  .modalBudjet .modal-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center;
+    max-width: 400px;
+    position: relative;
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 10px 35px rgba(33, 37, 52, 0.4);
+    box-shadow: 0 10px 35px rgba(33, 37, 52, 0.4);
+    background-color: #353b56;
+    color: black; }
+    @media screen and (max-width: 480px) {
+      .modalBudjet .modal-content {
+        max-width: 300px; } }
+  .modalBudjet .budget-title {
+    color: white;
+    margin-bottom: 10px; }
+    @media screen and (max-width: 480px) {
+      .modalBudjet .budget-title {
+        font-size: 20px; } }
+  .modalBudjet .budjet-input {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px; }
+  .modalBudjet .start-programm-btn {
+    padding: 10px;
+    color: white;
+    border: 1px solid black;
+    text-transform: uppercase;
+    background: -webkit-gradient(linear, left top, left bottom, from(#b4e391), color-stop(50%, #61c419), to(#b4e391));
+    background: -webkit-linear-gradient(top, #b4e391 0%, #61c419 50%, #b4e391 100%);
+    background: -o-linear-gradient(top, #b4e391 0%, #61c419 50%, #b4e391 100%);
+    background: linear-gradient(to bottom, #b4e391 0%, #61c419 50%, #b4e391 100%);
+    cursor: pointer;
+    border-radius: 5px; }
